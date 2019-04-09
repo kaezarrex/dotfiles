@@ -1,0 +1,25 @@
+# temporary files
+*.swp
+.DS_Store
+
+# packages
+*.gz
+*.jar
+*.rar
+*.tar
+*.zip
+
+# logs
+*.log
+
+# databases
+*.sql
+
+# python
+*.pyc
+
+# other
+*.kml
+*.pyc
+*.egg-info
+*.swp
