@@ -129,20 +129,3 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# added by travis gem
-[ -f /Users/david/.travis/travis.sh ] && source /Users/david/.travis/travis.sh
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/david/node_modules/tabtab/.completions/serverless.bash ] && . /Users/david/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/david/node_modules/tabtab/.completions/sls.bash ] && . /Users/david/node_modules/tabtab/.completions/sls.bash
-
-# added as an experiment
-
-# The next line updates PATH for Netlify's Git Credential Helper.
-if [ -f '/Users/david/.netlify/helper/path.bash.inc' ]; then source '/Users/david/.netlify/helper/path.bash.inc'; fi
