@@ -71,7 +71,19 @@ C34="\[\033[00;34m\]"
 C35="\[\033[00;35m\]"
 C36="\[\033[00;36m\]"
 
-PS1="\$(__git_ps1 | tr -d ' ')${C32}\u@\h:${C34}\w${RESET} \$ "
+
+function parse_git_branch {
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+function prompt_short() {
+    PS1="\$(parse_git_branch)${C32}\u:${C34}\W${RESET} \\$ "
+}
+
+function prompt_default() {
+    PS1="\$(parse_git_branch)${C32}\u@\h:${C34}\w${RESET} \\$ "
+}
+prompt_default
 
 function name() {
     printf '\033]2;%s\007' "$@";
