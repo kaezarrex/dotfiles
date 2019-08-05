@@ -13,21 +13,11 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins {{{
 " My Plugins here:
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'fatih/vim-go'
-Plugin 'groenewege/vim-less'
-Plugin 'junegunn/goyo.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kevinw/pyflakes-vim'
-Plugin 'lambdatoast/elm.vim'
 Plugin 'mikewest/vimroom'
-Plugin 'mileszs/ack.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'robertmeta/nofrils'
-Plugin 'rstacruz/sparkup'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -198,6 +188,8 @@ let g:go_fmt_fail_silently = 1
 let g:gruvbox_termcolors=16
 set background=dark
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
+
 " }}}
 
 " Custom Functions {{{
