@@ -36,16 +36,7 @@ filetype plugin indent on    " required
 " }}}
 
 " Plugin Settings {{{
-let g:jedi#popup_on_dot = 0
-let g:sparkupExecuteMapping = '<c-r>'
-
-"let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
-" Don't show seperators
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-
-"let g:gruvbox_termcolors = 16
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -102,7 +93,7 @@ set showcmd
 set backspace=start,indent,eol
 
 set swapfile
-set dir=~/tmp
+set dir=/tmp
 " }}}
 
 " Color Column {{{
@@ -180,16 +171,14 @@ augroup END
 let g:golang_cwindow = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
+let g:go_auto_type_info = 1 " automatic :GoInfo
 " }}}
 
 " Colors {{{
-"let g:solarized_termcolors=256
-"set t_Co=16
 let g:gruvbox_termcolors=16
 set background=dark
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
-
 " }}}
 
 " Custom Functions {{{
@@ -205,5 +194,3 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 " }}}
-
-" vim:foldmethod=marker:foldlevel=0
