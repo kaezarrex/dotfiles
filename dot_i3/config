@@ -46,8 +46,8 @@ bindsym $mod+x move workspace to output right
 exec_always --no-startup-id feh --bg-fill /home/david/Dropbox/wallpaper/desktop/RjU7NOp.jpg
 
 # volume
-bindsym Control+Shift+Up exec amixer -c 1 set Master 3+ unmute
-bindsym Control+Shift+Down exec amixer -c 1 set Master 3- unmute
+bindsym Control+Shift+Up exec amixer sset Master 3%+ unmute
+bindsym Control+Shift+Down exec amixer sset Master 3%- unmute
 bindsym Control+Shift+space exec amixer -D pulse set Master toggle
 
 # screen brightness
@@ -87,11 +87,7 @@ for_window [class="Keybase"] floating enable, border pixel 0
 # exec --no-startup-id dunst
 
 # start other processes
-exec --no-startup-id dropbox start
-exec --no-startup-id gnome-terminal
-exec --no-startup-id google-chrome
-exec --no-startup-id slack
-exec --no-startup-id slack-werk
+exec --no-startup-id i3-sensible-terminal
 
 #############################
 
@@ -109,10 +105,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -121,10 +117,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -133,7 +129,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -197,10 +193,10 @@ mode "resize" {
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
     # Pressing down will grow the window’s height.
-    bindsym j resize shrink width 2 px or 2 ppt
-    bindsym k resize grow height 2 px or 2 ppt
-    bindsym l resize shrink height 2 px or 2 ppt
-    bindsym semicolon resize grow width 2 px or 2 ppt
+    bindsym h resize shrink width 2 px or 2 ppt
+    bindsym j resize grow height 2 px or 2 ppt
+    bindsym k resize shrink height 2 px or 2 ppt
+    bindsym l resize grow width 2 px or 2 ppt
 
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
@@ -227,16 +223,16 @@ client.unfocused        #3c3836 #282828 #fbf1c7 #ffffff   #ffffff
 bar {
     status_command i3status
     position top
-    font pango: Inconsolata, FontAwesome 11
+    font pango: Fira Code Medium, FontAwesome 11
 
     colors {
         background #282828
-        statusline #bbbbbb
+        statusline #a89984
 
         focused_workspace  #ffffff #458588
         active_workspace   #ffffff #82a598
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
+        inactive_workspace #a89984 #282828
+        urgent_workspace   #ffffff #cc241d
     }
 
 }
