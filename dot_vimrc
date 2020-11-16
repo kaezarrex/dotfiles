@@ -13,13 +13,18 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins {{{
 " My Plugins here:
 Plugin 'airblade/vim-gitgutter'
+Plugin 'cespare/vim-toml'
+Plugin 'christianrondeau/vim-base64'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'fatih/vim-go'
+Plugin 'hashivim/vim-terraform'
 Plugin 'mikewest/vimroom'
 Plugin 'morhetz/gruvbox'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'prettier/vim-prettier'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sebdah/vim-delve'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
@@ -157,8 +162,9 @@ augroup configgroup
     autocmd BufNewFile,BufReadPost *.coffee,*.js,*.json,*.jsx setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
     autocmd BufNewFile,BufReadPost *.go setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
     autocmd BufNewFile,BufReadPost *.c setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
-    autocmd BufNewFile,BufReadPost *.md setl tw=79 wrap
+    autocmd BufNewFile,BufReadPost *.md setl tw=100 textwidth=100 wrap
     autocmd BufNewFile,BufReadPost *.rst setl shiftwidth=3 expandtab tabstop=3 softtabstop=3 tw=79
+    autocmd BufNewFile,BufReadPost *.yaml,*.yml setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
     autocmd BufNewFile,BufReadPost *.py setl tw=100 wrap
     autocmd BufWritePre *.py,*.js,*.jsx,*.coffee,*.css,*.sass,*.less,*.md :call <SID>StripTrailingWhitespaces()
     autocmd BufNewFile,BufReadPost *.c,*.h setl shiftwidth=2 expandtab tabstop=2 softtabstop=2

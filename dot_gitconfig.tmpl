@@ -1,6 +1,9 @@
 [user]
     name = {{ .name }}
     email = {{ .email }}
+{{- if .work }}
+    signingkey = {{ .work_signingkey }}
+{{- end }}
 [color]
     ui = auto
 [color "branch"]
@@ -38,3 +41,11 @@
     up = "!git remote update -p; git merge --ff-only @{u}"
 [push]
     default = simple
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+{{- if .work }}
+[url "git@{{ .work_remote }}:"]
+    insteadOf = https://{{ .work_remote }}/
+[commit]
+    gpgsign = true
+{{- end }}
